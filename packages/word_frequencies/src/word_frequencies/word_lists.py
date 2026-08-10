@@ -1,11 +1,11 @@
 import os
 import csv
 
-class WeightedNouns:
+class WeightedWords:
 
     def __init__(self):
-        self.part_of_speech = 'noun';
-        self.source_filename = 'ucrel.lancs.ac.uk-bncfreq-lists-5_1_all_rank_noun.txt'
+        self.part_of_speech = 'none';
+        self.source_filename = 'none'
 
     def get_source_file_path(self):
         data_file_name = self.source_filename
@@ -27,3 +27,18 @@ class WeightedNouns:
 
     def get_weighted_list(self):
         return self.load_from_path(self.get_source_file_path())
+
+class WeightedNouns(WeightedWords):
+
+    def __init__(self):
+        self.part_of_speech = 'noun';
+        self.source_filename = 'ucrel.lancs.ac.uk-bncfreq-lists-5_1_all_rank_noun.txt'
+
+
+class WeightedAdjectives(WeightedWords):
+
+    def __init__(self):
+        self.part_of_speech = 'adjective';
+        self.source_filename = 'ucrel.lancs.ac.uk-bncfreq-lists-5_3_all_rank_adjective.txt'
+
+
