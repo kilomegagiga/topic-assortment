@@ -30,3 +30,23 @@ class Test_csv_module:
         for row in reader:
             result = result + ', '.join(row) + '\n'
         assert ', first, second, third\n' == result
+
+    def test_mustImportFromFile(self):
+
+        file_path = os.path.realpath(__file__)
+        example_path = file_path
+        assert os.path.exists(example_path)
+        example_path = os.path.abspath(os.path.join(file_path, os.pardir))
+        assert os.path.exists(example_path)
+        example_path = os.path.join(example_path, "test_rsrc")
+        assert os.path.exists(example_path)
+        example_path = os.path.join(example_path, "example.tsv")
+        assert os.path.exists(example_path)
+        result = ''
+        with open(example_path, newline='') as file:
+            reader = csv.reader(file, delimiter='\t')
+            for row in reader:
+                result = result + ', '.join(row) + '\n'
+        assert ', one, 1\n, two, 2\n, three, 3\n' == result
+
+
