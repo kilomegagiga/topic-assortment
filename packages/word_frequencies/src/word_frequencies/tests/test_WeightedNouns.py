@@ -1,6 +1,6 @@
 import os
 
-from word_frequencies.word_lists import WeightedNouns
+from word_frequencies.core import WeightedNouns
 
 class Test_WeightedNouns:
 
