@@ -9,6 +9,15 @@ class Test_os_module:
         assert '/' == file_path[:1]
         assert '.py' == file_path[-3:]
 
+    def test_mustFindParentDirectory(self):
+        file_path = os.path.realpath(__file__)
+        base_name = os.path.basename(file_path)
+        parent_path = os.path.abspath(os.path.join(file_path, os.pardir))
+        rejoined_path = os.path.join(parent_path, base_name)
+        assert file_path != parent_path
+        assert file_path != base_name
+        assert file_path == rejoined_path
+
 class Test_csv_module:
 
     def test_mustImportTabSeparatedValues(self):
