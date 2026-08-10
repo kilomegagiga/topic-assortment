@@ -7,6 +7,6 @@ class Test_WeightedNouns:
         wn = WeightedNouns()
         nouns = wn.get_weighted_list()
         assert isinstance(nouns, list)
-        #assert 3030 == len(nouns)
+        assert 3030 == len(nouns)
 
         
