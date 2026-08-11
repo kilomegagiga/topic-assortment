@@ -15,7 +15,9 @@ Creates an 'env' directory that should be at the same level as this README file.
 Initial setup of pytest:
 ```
 $ source env/bin/activate
+$ pip install --upgrade pip
 $ pip install pytest
+$ pip install wheel
 $ pip install -e packages/*
 ```
 
