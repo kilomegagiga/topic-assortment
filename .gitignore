@@ -3,3 +3,4 @@ build/
 __pycache__/
 *.swp
 *.egg-info
+output.html
