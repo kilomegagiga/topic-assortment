@@ -1,0 +1,5 @@
+
+recursive-include rscr *
+
+recursive-exclude tests *
+recursive-exclude test *
