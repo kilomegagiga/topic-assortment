@@ -13,9 +13,14 @@ class WordGrid:
     def generate_cells(self, words):
         # Build 9 cells; each cell contains 3 words stacked vertically.
         # The 9 cells will later be formatted as 3 columns of 3 rows.
+        # However, traverse the string-length sorted items such that 
+        # the shorter words appear toward the left instead of the top.
+
         result = []
-        for j in range(9):
-            col_words = words[3*j:3*j+3]  # 3 words in this cell
+        for r in range(3):
+          for c in range(3):
+            j = 3 * (3*c + r)
+            col_words = words[j:j+3]  # 3 words in this cell
             col_html = [f"      <div class='word'>{w}</div>" for w in col_words]
             result.append(
                 "    <div class='cell'>\n" +
