@@ -22,7 +22,7 @@ class WordGrid:
                 "\n".join(col_html) +
                 "\n    </div>"
             )
-        return result
+        return "\n".join(result)
 
     def html_template(self, insert1, insert2):
         return f"""<!doctype html>
