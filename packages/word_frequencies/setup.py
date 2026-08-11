@@ -13,4 +13,6 @@ setup(
 
     package_dir={"": "src"},
     packages=find_packages(where="src"),
+
+    include_package_data=True,  ## for including rsrc directory
 )
