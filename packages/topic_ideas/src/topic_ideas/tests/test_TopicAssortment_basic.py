@@ -8,29 +8,10 @@ from topic_ideas.core import TopicAssortment
 
 class Test_TopicAssortment:
 
-    def test_canUseOtherPackages(self):
+    def test_canGenerateHTML(self):
 
+        ta = TopicAssortment()
 
-        wn = WeightedNouns()
-        nouns = wn.get_weighted_list()
-        assert 3030 == len(nouns)
-
-        ws = WeightedSample(nouns, 27)
-        sampleNouns = [j[1] for j in ws.extract()]
-        assert 27 == len(sampleNouns)
-
-
-        wn = WeightedAdjectives()
-        adjectives = wn.get_weighted_list()
-        assert 1035 == len(adjectives)
-
-        ws = WeightedSample(adjectives, 27)
-        sampleAdjectives = [j[1] for j in ws.extract()]
-        assert 27 == len(sampleAdjectives)
-
-
-        wg = WordGrid(sampleAdjectives, sampleNouns)
-        html = wg.generate()
-
-        with open("output.html", "w", encoding="utf-8") as f:
-            f.write(html)
+        ta.load_nouns()
+        ta.load_adjectives()
+        ta.write_html("output.html")
