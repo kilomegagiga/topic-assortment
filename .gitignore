@@ -1,6 +1,14 @@
+
+# Ignore swap files of open vi sessions
+*.swp
+
+# Ignore files associated with building and testing python files
 /env/
 build/
 __pycache__/
-*.swp
 *.egg-info
+
+# Ignore files hidden from Git by personal style preference
 *output.html
+*.0
+*.1
