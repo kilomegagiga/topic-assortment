@@ -1,7 +1,7 @@
 # topic-assortment
 Create an 2x3x3x3 grid of words to inspire creative ideas.
 The first 3x3x3 grid contains adjectives.  The second contains nouns.
-Words are selected by weighted sample where the weights are base on 
+Words are selected by weighted sample where the weights are based on 
 frequency of word usage in English, separated by part of speech.
 
 
