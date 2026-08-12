@@ -17,10 +17,16 @@ Creates an 'env' directory that should be at the same level as this README file.
 
 Initial setup of pytest:
 ```
-$ source env/bin/activate
+$ source ./env/bin/activate
 $ pip install --upgrade pip
 $ pip install pytest
 $ pip install wheel
+$ for j in packages/*; do echo "$j"; cd "$j"; python3 -m pip install -e .; cd - ; done
+```
+
+Not yet clear why the for loop is necessary instead of just the following, 
+but it is:
+```
 $ pip install -e packages/*
 ```
 
@@ -31,7 +37,7 @@ $ deactivate
 
 To activate the virtual environment after the inital setup is complete:
 ```
-$ source env/bin/activate
+$ source ./env/bin/activate
 ```
 
 
