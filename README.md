@@ -1,5 +1,8 @@
-# word-frequencies-bnc
-Frequency of word usage in English separated by part of speech.
+# topic-assortment
+Create an 2x3x3x3 grid of words to inspire creative ideas.
+The first 3x3x3 grid contains adjectives.  The second contains nouns.
+Words are selected by weighted sample where the weights are base on 
+frequency of word usage in English, separated by part of speech.
 
 
 ## Python3 and PyTest
