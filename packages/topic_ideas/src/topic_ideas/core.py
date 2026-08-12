@@ -37,8 +37,7 @@ class TopicAssortment:
     def read_sample(self, filename):
         text = []
         with open(filename, "r", encoding="utf-8") as f:
-            for line in f:
-                text.append(f.read())
+            text = [line for line in f]
         assert len(text) >= 54
         self.sampleAdjectives = text[0:27]
         self.sampleNouns = text[27:54]
